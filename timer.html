@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timer • Stopwatch</title>
+	<meta name="description" content="Free online timer with features such as alarm, notification and a nice countdown.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="./public/main.css">
+	<link rel="icon" type="image/png" href="./public/img/favicon.png" />
+</head>
+<body>
+	
+	<header>
+		<a href="http://stopwatch.net"><img src="./public/img/logo_head.png" alt="Stopwatch.NET"></a>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="main-cont">
+					<div class="tab-menu">
+						<div class="item"><a href="index.html">Stopwatch</a></div>
+						<div class="item active-item"><a href="#">Timer</a></div>
+					</div>
+
+					<div class="notification-permission" id="notif-permission">
+						<a href="#" id="request-notification">Click here to activate notifications</a>, to get notified when the timer is up!
+					</div>
+
+					<div class="timer-input">
+						<label>SET THE TIMER</label><br>
+						<div class="full-input"><input type="number" id="input_hh" value="0"><label for="">HRS</label></div>
+						<div class="full-input"><input type="number" id="input_mm" value="0"><label for="">MIN</label></div>
+						<div class="full-input"><input type="number" id="input_ss" value="0"><label for="">SEC</label></div>
+						<div class="btn-wrap">
+							<button id="set">Set</button>
+						</div>
+					</div>
+
+					<div class="stopw-cont timer-stopw-cont">
+						<div class="unit"><h2 class="time-digit" id="hours">00</h2><label>HRS</label></div>
+						<div class="unit"><h2 class="time-digit" id="minutes">00</h2><label>MIN</label></div>
+						<div class="unit"><h2 class="time-digit" id="seconds">00</h2><label>SEC</label></div>
+						<div class="btn-wrap">
+							<button class="btn" id="btn-toggle">Start</button>
+							<button class="btn" id="btn-reset">Reset</button>
+						</div>			
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="footer-logo"><img src="./public/img/logo_footer.png" alt=""></div>
+			<div class="footer-items">
+				<a href="mailto:contact@stopwatch.net" target="_blank">Contact Us</a>
+				<a href="privacy.html">Privacy Policy</a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

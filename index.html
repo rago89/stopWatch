@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stopwatch • Stopwatch</title>
+	<meta name="description" content="Free online stopwatch with features such as laps and many more.">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="./public/main.css">
+	<link rel="icon" type="image/png" href="./public/img/favicon.png"/>
+
+</head>
+<body>
+	
+	<header>
+		<a href="http://stopwatch.net"><img src="./public/img/logo_head.png" alt="Stopwatch.NET"></a>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="main-cont">
+					<div class="tab-menu">
+						<div class="item active-item"><a href="index.html">Stopwatch</a></div>
+						<div class="item"><a href="timer.html">Timer</a></div>
+					</div>
+
+					<div class="stopw-cont">
+						<div class="unit"><h2 class="time-digit" id="hours">00</h2><label>HRS</label></div>
+						<div class="unit"><h2 class="time-digit" id="minutes">00</h2><label>MIN</label></div>
+						<div class="unit"><h2 class="time-digit" id="seconds">00</h2><label>SEC</label></div>
+						<div class="unit"><h2 class="time-digit" id="milliseconds">000</h2><label>MS</label></div>
+						<div class="btn-wrap">
+							<button class="btn" id="btn-toggle">Start</button>
+							<button class="btn" id="btn-add-lap">Add Lap</button>
+							<button class="btn" id="btn-reset">Reset</button>
+						</div>			
+					</div>
+
+					<div class="laps">
+						<label id="laps-header">LAPS</label>
+						<ul id="laps-list">
+						</ul>
+						<label id="lap-info"><em>To add a lap, press the "Add Lap" button.</em></label>
+					</div>
+
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="footer-logo"><img src="./public/img/logo_footer.png" alt=""></div>
+			<div class="footer-items">
+				<a href="mailto:contact@stopwatch.net" target="_blank">Contact Us</a>
+				<a href="privacy.html">Privacy Policy</a>
+			</div>
+		</div>
+	</footer>
+
+
+
+</body>
+</html>
