@@ -21,51 +21,57 @@ export const startCounterHdl = () => {
 
 function startCount(callBack) {
   const millisecondDisplay = document.getElementById("milliseconds");
+  let millisecond = 0;
   state.interval = setInterval(() => {
-    state.time.milliseconds += 10;
-    if (state.time.milliseconds === 1000) {
-      state.time.milliseconds = 0;
-      state.time.seconds++;
-      callBack(state.time.seconds);
-    }
+    millisecond += 10;
     let mil =
-      state.time.milliseconds < 10
-        ? "00" + state.time.milliseconds
-        : state.time.milliseconds < 100
-        ? "0" + state.time.milliseconds
-        : state.time.milliseconds;
+      millisecond < 10
+        ? "00" + millisecond
+        : millisecond < 100
+        ? "0" + millisecond
+        : millisecond === 1000
+        ? millisecond / 10
+        : millisecond;
     millisecondDisplay.innerHTML = mil;
+    state.time.milliseconds = millisecond;
+    if (millisecond === 1000) {
+      callBack(millisecond);
+      millisecond = 0;
+    }
   }, 10);
 }
 
-function getSecond(second, callBack) {
+function getSecond(millisecond, callBack) {
   const secondDisplay = document.getElementById("seconds");
-  if (second === 60) {
-    state.time.seconds = 0;
-    state.time.minutes++;
-    callBack(state.time.minutes);
-  }
+  state.time.seconds += millisecond / 1000;
   const { seconds } = state.time;
+  if (seconds === 60) {
+    callBack(seconds);
+    state.time.seconds = 0;
+  }
   let sec = seconds < 10 ? "0" + seconds : seconds;
   secondDisplay.innerHTML = sec;
 }
 
-function getMinutes(minute, callBack) {
+function getMinutes(second, callBack) {
   const minuteDisplay = document.getElementById("minutes");
-  if (minute === 60) {
-    state.time.minutes = 0;
-    state.time.hours++;
-    callBack(state.time.hours);
-  }
+  state.time.minutes += second / 60;
   const { minutes } = state.time;
+  if (minutes === 60) {
+    callBack(minutes);
+    state.time.minutes = 0;
+  }
   let min = minutes < 10 ? "0" + minutes : minutes;
-  minuteDisplay.innerHTML = state.time.minutes;
+  minuteDisplay.innerHTML = min;
 }
 
-function getHours(hour) {
-  const minuteDisplay = document.getElementById("hours");
-  if (hour === 24) {
+function getHours(minutes) {
+  const hourDisplay = document.getElementById("hours");
+  state.time.hours += minutes / 60;
+  const { hours } = state.time;
+  let hr = hours < 10 ? "0" + hours : hours;
+  hourDisplay.innerHTML = hr;
+  if (hours === 24) {
     state.time.hours = 0;
   }
-  minuteDisplay.innerHTML = state.time.hours;
 }
