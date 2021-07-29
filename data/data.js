@@ -8,4 +8,9 @@ export const state = {
     milliseconds: 0,
   },
   lapList: [],
+  setTimer: {
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  },
 };
