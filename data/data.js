@@ -1,5 +1,6 @@
 export const state = {
   interval: undefined,
+  timerInterval: undefined,
   counter: 0,
   time: {
     hours: 0,
