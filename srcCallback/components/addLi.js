@@ -6,9 +6,7 @@ export const addLiComponent = (obj) => {
   const min = minutes < 10 ? "0" + minutes : minutes;
   const sec = seconds < 10 ? "0" + seconds : seconds;
   const mill =
-    milliseconds < 10
-      ? "00" + milliseconds
-      : milliseconds < 100
+    milliseconds < 100
       ? "0" + milliseconds
       : milliseconds;
   liEl.innerHTML = `${obj.counter}. ${hr}:${min}:${sec}.${mill}`;

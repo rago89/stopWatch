@@ -24,14 +24,8 @@ function startCount(callBack) {
   let millisecond = 0;
   state.interval = setInterval(() => {
     millisecond += 10;
-    let mil =
-      millisecond < 10
-        ? "00" + millisecond
-        : millisecond < 100
-        ? "0" + millisecond
-        : millisecond === 1000
-        ? millisecond / 10
-        : millisecond;
+    let mil = millisecond < 100 ? "0" + millisecond : millisecond === 1000 ? millisecond / 10 : millisecond;
+
     millisecondDisplay.innerHTML = mil;
     state.time.milliseconds = millisecond;
     if (millisecond === 1000) {

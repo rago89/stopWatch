@@ -23,6 +23,7 @@ export const resetHdl = () => {
   for (const key in state.time) {
     state.time[key] = 0;
   }
+  // delete the laps
   if (ulEl.children.length) {
     [...ulEl.children].forEach((element) => {
       element.remove();
