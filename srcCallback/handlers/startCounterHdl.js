@@ -49,7 +49,7 @@ function getSecond(millisecond, callBack) {
 
 function getMinutes(second, callBack) {
   const minuteDisplay = document.getElementById("minutes");
-  state.time.minutes += second / 60;
+  state.time.minutes += (second + 1) / 60;
   const { minutes } = state.time;
   if (minutes === 60) {
     callBack(minutes);
