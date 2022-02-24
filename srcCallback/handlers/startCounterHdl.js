@@ -40,7 +40,7 @@ function getSecond(millisecond, callBack) {
   state.time.seconds += millisecond / 1000;
   const { seconds } = state.time;
   if (seconds === 59) {
-    callBack(seconds);
+    callBack(seconds = 60);
     state.time.seconds = 0;
   }
   let sec = seconds < 10 ? "0" + seconds : seconds;
@@ -49,7 +49,7 @@ function getSecond(millisecond, callBack) {
 
 function getMinutes(second, callBack) {
   const minuteDisplay = document.getElementById("minutes");
-  state.time.minutes += (second + 1) / 60;
+  state.time.minutes += second / 60;
   const { minutes } = state.time;
   if (minutes === 60) {
     callBack(minutes);
