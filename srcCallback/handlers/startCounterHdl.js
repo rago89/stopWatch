@@ -38,9 +38,10 @@ function startCount(callBack) {
 function getSecond(millisecond, callBack) {
   const secondDisplay = document.getElementById("seconds");
   state.time.seconds += millisecond / 1000;
-  const { seconds } = state.time;
+  let { seconds } = state.time;
   if (seconds === 59) {
-    callBack(seconds = 60);
+    seconds = 60
+    callBack(seconds);
     state.time.seconds = 0;
   }
   let sec = seconds < 10 ? "0" + seconds : seconds;
