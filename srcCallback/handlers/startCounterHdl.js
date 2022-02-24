@@ -7,10 +7,10 @@ export const startCounterHdl = () => {
     : (startBtn.innerHTML = "Start");
   startBtn.innerHTML === "Stop";
   if (startBtn.innerHTML === "Stop") {
-    startCount((second) => {
-      getSecond(second, (minutes) => {
-        getMinutes(minutes, (hours) => {
-          getHours(hours);
+    startCount((millisecond) => {
+      getSecond(millisecond, (seconds) => {
+        getMinutes(seconds, (minutes) => {
+          getHours(minutes);
         });
       });
     });
@@ -39,7 +39,7 @@ function getSecond(millisecond, callBack) {
   const secondDisplay = document.getElementById("seconds");
   state.time.seconds += millisecond / 1000;
   const { seconds } = state.time;
-  if (seconds === 60) {
+  if (seconds === 59) {
     callBack(seconds);
     state.time.seconds = 0;
   }
