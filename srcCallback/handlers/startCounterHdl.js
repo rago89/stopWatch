@@ -39,7 +39,7 @@ function getSecond(millisecond, callBack) {
   const secondDisplay = document.getElementById("seconds");
   state.time.seconds += millisecond / 1000;
   const { seconds } = state.time;
-  if (seconds === 59) {
+  if (seconds === 60) {
     callBack(seconds);
     state.time.seconds = 0;
   }
